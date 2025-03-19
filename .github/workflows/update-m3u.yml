@@ -1,0 +1,41 @@
+name: Aggiorna m3u
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Esegue ogni giorno all'1:00 UTC
+  workflow_dispatch:  # Permette di eseguire il workflow manualmente
+
+permissions:
+  contents: write
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Esegui lo script per aggiornare la lista m3u
+        run: python script_m3u.py  # Se hai messo lo script nella root; altrimenti usa il percorso corretto
+
+      - name: Verifica e committa le modifiche
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          if git diff --quiet; then
+            echo "Nessuna modifica rilevata."
+          else
+            git add iptvitaplus_updated.m3u
+            git commit -m "Aggiornamento automatico della lista m3u"
+            git push
+          fi
