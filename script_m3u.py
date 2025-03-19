@@ -88,8 +88,8 @@ def main():
     # Processa il contenuto aggiornando i nomi dei canali
     contenuto_modificato = processa_m3u(contenuto, channel_mapping)
     
-    # Scrive il file aggiornato in un nuovo file
-    output_file = "iptvitaplus_updated.m3u"
+    # Sovrascrive il file con lo stesso nome: iptvitaplus.m3u
+    output_file = "iptvitaplus.m3u"
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(contenuto_modificato)
     
