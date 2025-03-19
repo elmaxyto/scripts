@@ -53,14 +53,15 @@ channel_mapping = {
 
 def aggiorna_extinf_line(line, mapping):
     """
-    Aggiorna la riga #EXTINF: sostituendo il nome del canale
-    (che si trova dopo l'ultima virgola) se presente nella mappa.
+    Aggiorna la riga #EXTINF: sostituendo il nome del canale (che si trova dopo l'ultima virgola)
+    se presente nella mappa. Viene usato .strip() per rimuovere spazi extra e non viene aggiunto
+    spazio extra dopo la virgola.
     """
     try:
         idx = line.rindex(",")
-        old_name = line[idx+1:].strip()
+        old_name = line[idx+1:].strip()  # Pulisce il nome da spazi extra
         new_name = mapping.get(old_name, old_name)
-        return line[:idx+1] + " " + new_name
+        return line[:idx+1] + new_name
     except ValueError:
         return line
 
