@@ -1,5 +1,6 @@
 import os
 import requests
+import re
 
 # URL da cui scaricare il file m3u
 m3u_url = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
@@ -45,7 +46,7 @@ channel_mapping = {
     "Rai News 24": "RaiNews24",
     "Italia 2": "Italia 2",
     "Sky TG24": "Sky TG24",
-    "TGCom24": "TGCom",
+    "TGCOM 24": "TgCom",
     "TGCom": "TgCom",
     # Corrispondenze mancanti
     "DMAX": "DMAX",
@@ -85,7 +86,11 @@ def aggiorna_extinf_line(line, mapping):
     try:
         idx = line.rindex(",")
         old_name = line[idx+1:].strip()  # Pulisce il nome da spazi extra
-        new_name = mapping.get(old_name, old_name)
+        # Cerca una corrispondenza parziale per "TGCOM 24"
+        if re.search(r"TGCOM\s*24", old_name, re.IGNORECASE):
+            new_name = "TgCom"
+        else:
+            new_name = mapping.get(old_name, old_name)
         return line[:idx+1] + new_name
     except ValueError:
         return line
