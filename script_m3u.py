@@ -2,8 +2,9 @@ import os
 import requests
 import re
 
-# URL da cui scaricare il file m3u
-m3u_url = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
+# URL delle liste m3u da scaricare
+m3u_url1 = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
+m3u_url2 = "https://raw.githubusercontent.com/peppenamir/iptv_italia/main/lista.m3u"
 
 # Mappa di corrispondenza tra il nome nella m3u e il nome corretto (EPG)
 channel_mapping = {
@@ -107,24 +108,57 @@ def processa_m3u(contenuto, mapping):
             nuove_linee.append(line + "\n")
     return "".join(nuove_linee)
 
+def unisci_m3u(contenuto1, contenuto2):
+    """
+    Unisce due liste m3u, eliminando i canali già presenti nella prima lista.
+    """
+    # Estrae i nomi dei canali dalla prima lista
+    canali_presenti = set()
+    for line in contenuto1.splitlines():
+        if line.startswith("#EXTINF:"):
+            idx = line.rindex(",")
+            nome_canale = line[idx+1:].strip()
+            canali_presenti.add(nome_canale)
+
+    # Aggiunge solo i canali non presenti nella prima lista
+    nuove_linee = contenuto1.splitlines()
+    for line in contenuto2.splitlines():
+        if line.startswith("#EXTINF:"):
+            idx = line.rindex(",")
+            nome_canale = line[idx+1:].strip()
+            if nome_canale not in canali_presenti:
+                nuove_linee.append(line)
+        else:
+            nuove_linee.append(line)
+
+    return "\n".join(nuove_linee) + "\n"
+
 def main():
-    # Scarica il file m3u dall'URL
-    print("Scaricando il file m3u...")
-    response = requests.get(m3u_url)
-    if response.status_code != 200:
-        print("Errore nel download del file m3u.")
+    # Scarica le liste m3u dagli URL
+    print("Scaricando le liste m3u...")
+    response1 = requests.get(m3u_url1)
+    response2 = requests.get(m3u_url2)
+
+    if response1.status_code != 200 or response2.status_code != 200:
+        print("Errore nel download delle liste m3u.")
         return
-    contenuto = response.text
-    
-    # Processa il contenuto aggiornando i nomi dei canali
-    contenuto_modificato = processa_m3u(contenuto, channel_mapping)
-    
-    # Sovrascrive il file con lo stesso nome: iptvitaplus.m3u
+
+    contenuto1 = response1.text
+    contenuto2 = response2.text
+
+    # Processa il contenuto delle liste m3u
+    contenuto1_modificato = processa_m3u(contenuto1, channel_mapping)
+    contenuto2_modificato = processa_m3u(contenuto2, channel_mapping)
+
+    # Unisce le liste m3u
+    contenuto_unito = unisci_m3u(contenuto1_modificato, contenuto2_modificato)
+
+    # Salva il file unico
     output_file = "iptvitaplus.m3u"
     with open(output_file, "w", encoding="utf-8") as f:
-        f.write(contenuto_modificato)
-    
-    print(f"Il file m3u è stato aggiornato e salvato in '{output_file}'.")
+        f.write(contenuto_unito)
+
+    print(f"Il file m3u unificato è stato salvato in '{output_file}'.")
 
 if __name__ == "__main__":
     main()
