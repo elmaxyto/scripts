@@ -46,6 +46,7 @@ channel_mapping = {
     "Italia 2": "Italia 2",
     "Sky TG24": "Sky TG24",
     "TGCom24": "TGCom",
+    "TGCom": "TgCom",
     # Corrispondenze mancanti
     "DMAX": "DMAX",
     "RaiStoria": "RaiStoria",
