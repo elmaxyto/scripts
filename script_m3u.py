@@ -6,6 +6,9 @@ import re
 m3u_url1 = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
 m3u_url2 = "https://raw.githubusercontent.com/peppenamir/iptv_italia/main/lista.m3u"
 
+# URL dell'EPG
+epg_url = "https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
+
 # Mappa di corrispondenza tra il nome nella m3u e il nome corretto (EPG)
 channel_mapping = {
     "Rai 1": "Rai1",
@@ -152,6 +155,10 @@ def main():
 
     # Unisce le liste m3u
     contenuto_unito = unisci_m3u(contenuto1_modificato, contenuto2_modificato)
+
+    # Aggiungi la riga per l'EPG
+    epg_line = "#EXTM3U url-tvg=\"{}\"\n".format(epg_url)
+    contenuto_unito = epg_line + contenuto_unito
 
     # Salva il file unico
     output_file = "iptvitaplus.m3u"
