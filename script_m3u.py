@@ -4,7 +4,8 @@ import re
 
 # URL delle liste m3u da scaricare
 m3u_url1 = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
-m3u_url2 = "https://raw.githubusercontent.com/peppenamir/iptv_italia/main/lista.m3u"
+m3u_url2 = "https://raw.githubusercontent.com/pandvan/rakuten-m3u-generator/refs/heads/master/output/rakuten.m3u"
+m3u_url3 = "https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u"
 
 # URL dell'EPG
 epg_url = "https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
