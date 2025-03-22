@@ -161,7 +161,7 @@ def aggiungi_group_title(contenuto, nome_gruppo):
         if line.startswith("#EXTINF:"):
             idx = line.find(",")
             if idx != -1:
-                line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx:]
+                line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx+1:]
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
