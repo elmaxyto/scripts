@@ -1,6 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
 #EXTGRP:TV Italiane
-#EXTM3U
 #EXTINF:-1 tvg-id="Rai1.it" tvg-chno="1" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/rai1.png" ,Rai1
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=7&forceUserAgent=raiplayappletv
@@ -178,7 +177,6 @@ https://d2hrvno5bw6tg2.cloudfront.net/smrtv-ch01/_definst_/smil:ch-01.smil/chunk
 #EXTINF:-1 tvg-id="RadioTvSerieA.it" tvg-chno="899" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/radiotvseriea.png" ,Radio TV Serie A con RDS
 https://stream.radioseriea.com/50773f0d0070476a8612d9984c6059d8/index.m3u8
 #EXTGRP:Rakuten TV
-#EXTM3U
 #EXTINF:-1 tvg-chno=0 tvg-id="top-movies-rakuten-tv" tvg-name="Film Top - Rakuten TV" ,Rakuten TV
 https://d4a4999341764c67a67e9ec9eb3790ab.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5984/master.m3u8
 #EXTINF:-1 tvg-chno=1 tvg-id="action-rakuten-tv" tvg-name="Azione - Rakuten TV" ,Rakuten TV
