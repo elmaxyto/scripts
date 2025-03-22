@@ -14,40 +14,71 @@ epg_url = "https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main
 
 # Mappa di corrispondenza tra il nome nella m3u e il nome corretto (EPG)
 channel_mapping = {
-    # ... (la tua mappa di corrispondenza)
+    # Esempio di mappa di corrispondenza
+    "Canale1": "Canale Uno",
+    "Canale2": "Canale Due"
 }
 
 def aggiorna_extinf_line(line, mapping):
-    # ... (la tua funzione per aggiornare le righe #EXTINF)
+    """Aggiorna il nome del canale in base alla mappa di corrispondenza."""
+    for old_name, new_name in mapping.items():
+        if old_name in line:
+            line = line.replace(old_name, new_name)
+    return line
 
 def processa_m3u(contenuto, mapping):
-    # ... (la tua funzione per processare il contenuto m3u)
+    """Processa il contenuto della lista m3u aggiornando i nomi dei canali."""
+    nuove_linee = []
+    for line in contenuto.splitlines():
+        if line.startswith("#EXTINF:"):
+            line = aggiorna_extinf_line(line, mapping)
+        nuove_linee.append(line)
+    return "\n".join(nuove_linee) + "\n"
 
 def elimina_gruppi(contenuto):
-    # ... (la tua funzione per eliminare i gruppi esistenti)
+    """Rimuove le righe che iniziano con '#EXTGRP:'."""
+    nuove_linee = []
+    for line in contenuto.splitlines():
+        if not line.startswith("#EXTGRP:"):
+            nuove_linee.append(line)
+    return "\n".join(nuove_linee) + "\n"
 
 def elimina_vecchi_gruppi(contenuto):
-    # ... (la tua funzione per eliminare i vecchi gruppi)
+    """Rimuove le righe che iniziano con '#EXTGRP:' (uguale a elimina_gruppi)."""
+    return elimina_gruppi(contenuto)
 
 def elimina_extm3u(contenuto):
-    # ... (la tua funzione per rimuovere le righe #EXTM3U non necessarie)
+    """Rimuove le righe che iniziano con '#EXTM3U' tranne la prima."""
+    nuove_linee = []
+    extm3u_trovato = False
+    for line in contenuto.splitlines():
+        if line.startswith("#EXTM3U"):
+            if not extm3u_trovato:
+                nuove_linee.append(line)
+                extm3u_trovato = True
+        else:
+            nuove_linee.append(line)
+    return "\n".join(nuove_linee) + "\n"
 
 def aggiungi_group_title(contenuto, nome_gruppo):
-    """Aggiunge il campo group-title alle righe #EXTINF."""
+    """Aggiunge il campo group-title alle righe #EXTINF senza modificare il nome del canale."""
     nuove_linee = []
     for line in contenuto.splitlines():
         if line.startswith("#EXTINF:"):
             idx = line.find(",")
             if idx != -1:
-                line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx+1:]
+                # Aggiungi il campo group-title senza modificare il nome del canale
+                line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx:]
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
 def unisci_m3u(contenuto1, contenuto2):
-    # ... (la tua funzione per unire due liste m3u)
+    """Unisce due liste m3u."""
+    return contenuto1 + contenuto2
 
 def aggiungi_gruppo(contenuto, nome_gruppo):
-    # ... (la tua funzione per aggiungere un nuovo gruppo)
+    """Aggiunge un nuovo gruppo (in questo caso, è simile a aggiungi_group_title)."""
+    return aggiungi_group_title(contenuto, nome_gruppo)
 
 def main():
     # Scarica le liste m3u dagli URL
@@ -83,13 +114,10 @@ def main():
         
         contenuti_modificati.append(contenuto_modificato)
 
-    # Aggiungi nuovi gruppi
-    contenuto_tv_italiane = aggiungi_gruppo(contenuti_modificati[0], "TV Italiane")
-    contenuto_rakuten_tv = aggiungi_gruppo(contenuti_modificati[1], "Rakuten TV")
-    contenuto_pluto_tv = aggiungi_gruppo(contenuti_modificati[2], "Pluto TV")
-
     # Unisce le liste m3u
-    contenuto_unito = contenuto_tv_italiane + contenuto_rakuten_tv + contenuto_pluto_tv
+    contenuto_unito = ""
+    for contenuto in contenuti_modificati:
+        contenuto_unito += contenuto
 
     # Aggiungi la riga per l'EPG
     epg_line = "#EXTM3U url-tvg=\"{}\"\n".format(epg_url)
