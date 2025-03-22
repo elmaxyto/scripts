@@ -3,9 +3,11 @@ import requests
 import re
 
 # URL delle liste m3u da scaricare
-m3u_url1 = "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u"
-m3u_url2 = "https://raw.githubusercontent.com/pandvan/rakuten-m3u-generator/refs/heads/master/output/rakuten.m3u"
-m3u_url3 = "https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u"
+m3u_urls = [
+    "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/main/iptvitaplus.m3u",
+    "https://raw.githubusercontent.com/pandvan/rakuten-m3u-generator/refs/heads/master/output/rakuten.m3u",
+    "https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u"
+]
 
 # URL dell'EPG
 epg_url = "https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
@@ -112,50 +114,69 @@ def processa_m3u(contenuto, mapping):
             nuove_linee.append(line + "\n")
     return "".join(nuove_linee)
 
-def unisci_m3u(contenuto1, contenuto2):
-    """
-    Unisce due liste m3u, eliminando i canali già presenti nella prima lista.
-    """
-    # Estrae i nomi dei canali dalla prima lista
-    canali_presenti = set()
-    for line in contenuto1.splitlines():
+def elimina_gruppi(contenuto):
+    """Elimina i gruppi esistenti dai canali."""
+    nuove_linee = []
+    for line in contenuto.splitlines():
+        if line.startswith("#EXTGRP:"):
+            continue
         if line.startswith("#EXTINF:"):
-            idx = line.rindex(",")
-            nome_canale = line[idx+1:].strip()
-            canali_presenti.add(nome_canale)
+            idx = line.find(",")
+            if idx != -1:
+                nome_canale = line[idx+1:].strip()
+                # Rimuovi eventuali gruppi
+                if "-" in nome_canale:
+                    nome_canale = nome_canale.split("-")[-1].strip()
+                line = line[:idx+1] + nome_canale
+        nuove_linee.append(line)
+    return "\n".join(nuove_linee) + "\n"
 
-    # Aggiunge solo i canali non presenti nella prima lista
+def unisci_m3u(contenuto1, contenuto2):
+    """Unisce due liste m3u mantenendo l'ordine originale."""
     nuove_linee = contenuto1.splitlines()
     for line in contenuto2.splitlines():
         if line.startswith("#EXTINF:"):
-            idx = line.rindex(",")
-            nome_canale = line[idx+1:].strip()
-            if nome_canale not in canali_presenti:
-                nuove_linee.append(line)
+            nuove_linee.append(line)
         else:
             nuove_linee.append(line)
-
     return "\n".join(nuove_linee) + "\n"
+
+def aggiungi_gruppo(contenuto, nome_gruppo):
+    """Aggiunge un nuovo gruppo ai canali."""
+    gruppo_line = f"#EXTGRP:{nome_gruppo}\n"
+    return gruppo_line + contenuto
 
 def main():
     # Scarica le liste m3u dagli URL
     print("Scaricando le liste m3u...")
-    response1 = requests.get(m3u_url1)
-    response2 = requests.get(m3u_url2)
-
-    if response1.status_code != 200 or response2.status_code != 200:
-        print("Errore nel download delle liste m3u.")
-        return
-
-    contenuto1 = response1.text
-    contenuto2 = response2.text
+    contenuti = []
+    for url in m3u_urls:
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            contenuti.append(response.text)
+        except requests.exceptions.RequestException as e:
+            print(f"Errore nel download della lista m3u da {url}: {e}")
+            continue
 
     # Processa il contenuto delle liste m3u
-    contenuto1_modificato = processa_m3u(contenuto1, channel_mapping)
-    contenuto2_modificato = processa_m3u(contenuto2, channel_mapping)
+    contenuti_modificati = []
+    for i, contenuto in enumerate(contenuti):
+        if i == 0:  # Solo per la prima lista
+            contenuto_modificato = processa_m3u(contenuto, channel_mapping)
+        else:
+            contenuto_modificato = contenuto  # Lascia invariati gli altri
+        
+        contenuto_modificato = elimina_gruppi(contenuto_modificato)
+        contenuti_modificati.append(contenuto_modificato)
+
+    # Aggiungi nuovi gruppi
+    contenuto_tv_italiane = aggiungi_gruppo(contenuti_modificati[0], "TV Italiane")
+    contenuto_rakuten_tv = aggiungi_gruppo(contenuti_modificati[1], "Rakuten TV")
+    contenuto_pluto_tv = aggiungi_gruppo(contenuti_modificati[2], "Pluto TV")
 
     # Unisce le liste m3u
-    contenuto_unito = unisci_m3u(contenuto1_modificato, contenuto2_modificato)
+    contenuto_unito = contenuto_tv_italiane + contenuto_rakuten_tv + contenuto_pluto_tv
 
     # Aggiungi la riga per l'EPG
     epg_line = "#EXTM3U url-tvg=\"{}\"\n".format(epg_url)
