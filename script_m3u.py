@@ -145,6 +145,15 @@ def elimina_vecchi_gruppi(contenuto):
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
+def elimina_extm3u(contenuto):
+    """Rimuove le righe #EXTM3U non necessarie."""
+    nuove_linee = []
+    for line in contenuto.splitlines():
+        if line == "#EXTM3U":
+            continue
+        nuove_linee.append(line)
+    return "\n".join(nuove_linee) + "\n"
+
 def unisci_m3u(contenuto1, contenuto2):
     """Unisce due liste m3u mantenendo l'ordine originale."""
     nuove_linee = contenuto1.splitlines()
@@ -183,6 +192,7 @@ def main():
         
         contenuto_modificato = elimina_gruppi(contenuto_modificato)
         contenuto_modificato = elimina_vecchi_gruppi(contenuto_modificato)
+        contenuto_modificato = elimina_extm3u(contenuto_modificato)
         contenuti_modificati.append(contenuto_modificato)
 
     # Aggiungi nuovi gruppi
