@@ -68,7 +68,10 @@ def aggiungi_group_title(contenuto, nome_gruppo):
             idx = line.find(",")
             if idx != -1:
                 # Aggiungi il campo group-title senza modificare il nome del canale
-                line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx:]
+                if "group-title=" not in line:
+                    line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx:]
+                else:
+                    line = line[:idx] + f"," + line[idx+1:]
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
@@ -101,8 +104,9 @@ def main():
         else:
             contenuto_modificato = contenuto  # Lascia invariati gli altri
         
-        contenuto_modificato = elimina_gruppi(contenuto_modificato)
-        contenuto_modificato = elimina_vecchi_gruppi(contenuto_modificato)
+        # Non rimuovere i gruppi se non vuoi
+        # contenuto_modificato = elimina_gruppi(contenuto_modificato)
+        # contenuto_modificato = elimina_vecchi_gruppi(contenuto_modificato)
         contenuto_modificato = elimina_extm3u(contenuto_modificato)
         
         if i == 0:
