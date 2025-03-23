@@ -108,10 +108,6 @@ def elimina_gruppi(contenuto):
             nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
-def elimina_vecchi_gruppi(contenuto):
-    """Rimuove le righe che iniziano con '#EXTGRP:' (uguale a elimina_gruppi)."""
-    return elimina_gruppi(contenuto)
-
 def elimina_extm3u(contenuto):
     """Rimuove le righe che iniziano con '#EXTM3U' tranne la prima."""
     nuove_linee = []
@@ -140,14 +136,6 @@ def aggiungi_group_title(contenuto, nome_gruppo):
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
-def unisci_m3u(contenuto1, contenuto2):
-    """Unisce due liste m3u."""
-    return contenuto1 + contenuto2
-
-def aggiungi_gruppo(contenuto, nome_gruppo):
-    """Aggiunge un nuovo gruppo (in questo caso, è simile a aggiungi_group_title)."""
-    return aggiungi_group_title(contenuto, nome_gruppo)
-
 def main():
     # Scarica le liste m3u dagli URL
     print("Scaricando le liste m3u...")
@@ -164,23 +152,16 @@ def main():
     # Processa il contenuto delle liste m3u
     contenuti_modificati = []
     for i, contenuto in enumerate(contenuti):
-        if i == 0:  # Solo per la prima lista
-            contenuto_modificato = processa_m3u(contenuto, channel_mapping)
-        else:
-            contenuto_modificato = contenuto  # Lascia invariati gli altri
-        
-        # Non rimuovere i gruppi se non vuoi
-        # contenuto_modificato = elimina_gruppi(contenuto_modificato)
-        # contenuto_modificato = elimina_vecchi_gruppi(contenuto_modificato)
-        contenuto_modificato = elimina_extm3u(contenuto_modificato)
-        
+        contenuto_modificato = elimina_gruppi(contenuto)  # Rimuove i gruppi ereditati
         if i == 0:
+            contenuto_modificato = processa_m3u(contenuto_modificato, channel_mapping)
             contenuto_modificato = aggiungi_group_title(contenuto_modificato, "TV Italiane")
         elif i == 1:
             contenuto_modificato = aggiungi_group_title(contenuto_modificato, "Rakuten TV")
         elif i == 2:
             contenuto_modificato = aggiungi_group_title(contenuto_modificato, "Pluto TV")
         
+        contenuto_modificato = elimina_extm3u(contenuto_modificato)
         contenuti_modificati.append(contenuto_modificato)
 
     # Unisce le liste m3u
