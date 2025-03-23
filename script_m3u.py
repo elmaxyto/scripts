@@ -137,6 +137,8 @@ def aggiungi_group_title(contenuto, nome_gruppo):
     return "\n".join(nuove_linee) + "\n"
 
 def main():
+    print("Current working directory:", os.getcwd())
+
     # Scarica le liste m3u dagli URL
     print("Scaricando le liste m3u...")
     contenuti = []
@@ -177,8 +179,7 @@ def main():
     output_file = "iptvitaplus.m3u"
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(contenuto_unito)
-
-    print(f"Il file m3u unificato è stato salvato in '{output_file}'.")
+        print(f"Il file m3u unificato è stato salvato in '{output_file}'.")
 
 if __name__ == "__main__":
     main()
