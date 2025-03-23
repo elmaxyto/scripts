@@ -122,17 +122,18 @@ def elimina_extm3u(contenuto):
     return "\n".join(nuove_linee) + "\n"
 
 def aggiungi_group_title(contenuto, nome_gruppo):
-    """Aggiunge il campo group-title alle righe #EXTINF senza modificare il nome del canale."""
+    """Sostituisce il campo group-title nelle righe #EXTINF con il nuovo valore."""
     nuove_linee = []
     for line in contenuto.splitlines():
         if line.startswith("#EXTINF:"):
-            idx = line.find(",")
-            if idx != -1:
-                # Aggiungi il campo group-title senza modificare il nome del canale
-                if "group-title=" not in line:
-                    line = line[:idx] + f" group-title=\"{nome_gruppo}\"," + line[idx:]
-                else:
-                    line = line[:idx] + f"," + line[idx+1:]
+            # Rimuovi qualsiasi group-title esistente
+            if "group-title=" in line:
+                line = re.sub(r'group-title="[^"]*"', f'group-title="{nome_gruppo}"', line)
+            else:
+                # Se non esiste, aggiungilo prima della virgola
+                idx = line.find(",")
+                if idx != -1:
+                    line = line[:idx] + f' group-title="{nome_gruppo}"' + line[idx:]
         nuove_linee.append(line)
     return "\n".join(nuove_linee) + "\n"
 
