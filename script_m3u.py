@@ -4,7 +4,7 @@ import re
 
 # URL delle liste m3u da scaricare
 m3u_urls = [
-    "https://raw.githubusercontent.com/wpisa24/IPTV-Italia/refs/heads/main/Iptv-semplificato.m3u",
+    "https://raw.githubusercontent.com/Tundrak/IPTV-Italia/refs/heads/main/iptvitaplus.m3u",
     "https://raw.githubusercontent.com/pandvan/rakuten-m3u-generator/refs/heads/master/output/rakuten.m3u",
     "https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u"
 ]
