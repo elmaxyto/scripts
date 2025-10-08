@@ -1,3 +1,13 @@
+name: Aggiorna m3u
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # ogni giorno all'1:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
