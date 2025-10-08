@@ -2,7 +2,7 @@ name: Aggiorna m3u
 
 on:
   schedule:
-    - cron: '0 1 * * *'  # Esegue ogni giorno all'1:00 UTC
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:
@@ -38,6 +38,7 @@ jobs:
           else
             git add iptvitaplus.m3u
             git commit -m "Aggiornamento automatico della lista m3u"
-            git pull --rebase origin main || (echo "Errore nel rebase, aborting" && git rebase --abort && exit 1)
+            git fetch origin main
+            git reset --hard origin/main
             git push
           fi
