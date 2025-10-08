@@ -37,6 +37,7 @@ jobs:
           else
             git add iptvitaplus.m3u
             git commit -m "Aggiornamento automatico della lista m3u"
-            git pull origin main --rebase
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
