@@ -33,12 +33,12 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          git fetch origin main
+          git reset --hard origin/main
           if git diff --quiet; then
             echo "Nessuna modifica rilevata."
           else
             git add iptvitaplus.m3u
             git commit -m "Aggiornamento automatico della lista m3u"
-            git fetch origin main
-            git reset --hard origin/main
             git push
           fi
