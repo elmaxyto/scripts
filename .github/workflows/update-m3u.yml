@@ -1,13 +1,3 @@
-name: Aggiorna m3u
-
-on:
-  schedule:
-    - cron: '0 1 * * *' # ogni giorno all'1:00 UTC
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
@@ -16,6 +6,12 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Pull & rebase prima delle modifiche
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git pull --rebase
 
       - uses: actions/setup-python@v4
         with:
@@ -27,11 +23,8 @@ jobs:
       - name: Esegui script m3u
         run: python script_m3u.py
 
-      - name: Aggiorna e push se cambia
+      - name: Commit & push se serve
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git pull --rebase
           if git diff --quiet; then
             echo "Nessuna modifica da pushare."
           else
