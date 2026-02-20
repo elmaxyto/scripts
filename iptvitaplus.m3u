@@ -1,10 +1,9 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
-#EXTM3U url-tvg="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz" x-tvg-url="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz" max-conn="8"
+#EXTM3U url-tvg="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz" billed-msg="☕Supportarmi:https://ko-fi.com/gtvit/tip" max-conn="8" x-tvg-url="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz"
 
-#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" tvg-chno="1" channel-number="1" group-title="TV Italiane",Rai1 HD
-#KODIPROP:inputstream.adaptive.manifest_type=hls
+#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" tvg-chno="1" channel-number="1" group-title="TV Italiane",Rai1 4K
 #EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
-https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16&forceUserAgent=raiplayappletv
+https://raievent10-elem-live.akamaized.net/hls/live/619189/raievent10/raievent10/playlist.m3u8
 #EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473662585214Logo-Rai2.png" tvg-chno="2" channel-number="2" group-title="TV Italiane",Rai2 HD
 #KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
@@ -29,7 +28,13 @@ https://d31mw7o1gs0dap.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 https://cloudflare-api.zappr.stream/api?https://viamotionhsi.netplus.ch/live/eds/rsila1hd/browser-HLS8/rsila1hd.m3u8
 #EXTINF:-1 tvg-name="RSI La2" tvg-id="rsila2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RSI_La_2_2012.svg/320px-RSI_La_2_2012.svg.png" tvg-chno="11" channel-number="11" group-title="TV Italiane",RSI La2
 https://cloudflare-api.zappr.stream/api?https://viamotionhsi.netplus.ch/live/eds/rsila2hd/browser-HLS8/rsila2hd.m3u8
-#EXTINF:-1 tvg-id="ITBA3300048YJ" tvgid="RakutenTrailers.it" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBA3300048YJ_20250715T004402SQUARE.png" tvg-chno="12" channel-number="12" group-title="TV Italiane", Trailers
+#EXTINF:-1 tvg-id="Rai1.it" tvg-name="Rai1" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" group-title="TV Italiane" tvg-chno="12" channel-number="12",Rai1 4K dash
+https://raievent10-dash-live.akamaized.net/dash/live/664000/raievent10/manifest.mpd
+#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" tvg-chno="13" channel-number="13" group-title="TV Italiane",Rai1 1080p
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16&forceUserAgent=raiplayappletv
+#EXTINF:-1 tvg-id="ITBA3300048YJ" tvgid="RakutenTrailers.it" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBA3300048YJ_20250715T004402SQUARE.png" tvg-chno="14" channel-number="14" group-title="TV Italiane", Trailers
 https://amg01821-amg01821c3-plex-italy-5433.playouts.now.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-name="Mediaset 20" tvg-id="20Mediaset.it" tvg-logo="https://static2.mediasetplay.mediaset.it/mam/2021/03/30/170100285-6e222810-ae86-45c1-ad6d-8804b2f87963.png" tvg-chno="20" channel-number="20" group-title="TV Italiane",Mediaset 20 HD
 https://live03-seg.msf.cdn.mediaset.net/live/ch-lb/lb-clr.isml/manifest_hd.mpd
@@ -196,9 +201,9 @@ https://amg00069-amg00069c3-samsung-it-5223.playouts.now.amagi.tv/playlist/amg00
 https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/v1/stitch/embed/hls/channel/64808a8c536e0c0008a276d1/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=0&appVersion=0&clientModelNumber=1.0.0&country=IT&deviceDNT=1&deviceId=0&deviceLat=45.4640&deviceLon=9.1919&serverSideAds=false&marketingRegion=IT&masterJWTPassthrough=true&includeExtendedEvents=false&embedPartner=samsung-tvplus
 #EXTINF:-1 tvg-id="PlutoTvChristmas.it" tvg-name="Pluto TV Christmas" tvg-logo="https://images.pluto.tv/channels/612e05b885183d0007958101/colorLogoPNG.png" group-title="TV Italiane",Christmas - Pluto
 https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/v1/stitch/embed/hls/channel/612e05b885183d0007958101/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=1&appVersion=0&clientModelNumber=1.0.0&country=IT&deviceDNT=1&deviceId=0&deviceLat=45.4640&deviceLon=9.1919&serverSideAds=false&marketingRegion=IT&gdpr=1&gpp_sid=2&embedPartner=samsung-tvplus
-#EXTINF:-1 tvg-id="IT3800001XM" tvg-name="Cine Natale" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/IT3800001XM_20251028T010422SQUARE.png" group-title="TV Italiane", Cine Natale
+#EXTINF:-1 tvg-id="IT3800001XM" tvg-name="Cine Amore" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/IT3800001XM_20251028T010422SQUARE.png" group-title="TV Italiane", Cine Amore
 https://ab4cdacb.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleC1pdF9BbW9pbE5hdGFsZV9ITFM/5fba5750-5dc8-4e2e-b39a-43bcefd76d08/5.m3u8
-#EXTINF:-1 tvg-name="Christmas Time" tvg-id="" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBD3200001VR_20251111T011340SQUARE.png" group-title="TV Italiane",Christmas Time
+#EXTINF:-1 tvg-name="Supercinema" tvg-id="" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBD3200001VR_20251111T011340SQUARE.png" group-title="TV Italiane",Supercinema
 https://amg02512-nexodigital-amg02512c3-samsung-it-766.playouts.now.amagi.tv/playlist/amg02512-nexodigital-cinemaexcelsior-samsungit/playlist.m3u8?ads.did=%&ads.dnt=%&ads.app_domain=%&ads.app_name=%&ads.tc_string=%&ads.coppa=0&ads.ifa_type=%&ads.url=%
 #EXTINF:-1 tvg-name="Cine paura" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/IT3600005AL_20250722T005609SQUARE.png" group-title="TV Italiane",Cine Paura
 https://amg02512-amg02512c7-samsung-it-5138.playouts.now.amagi.tv/playlist/amg02512-nexodigital-comedytime-samsungit/playlist.m3u8
@@ -300,7 +305,7 @@ https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/60802d37ee238e0007c94
 #EXTINF:-1 tvg-id="PlutoRenegade.it" tvg-logo="https://images.pluto.tv/channels/634926e4b51d2d00077819a2/colorLogoPNG.png" group-title="TV Italiane", Renegade - Pluto
 https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/634926e4b51d2d00077819a2/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=0&appVersion=0&clientModelNumber=1.0.0&country=IT&deviceDNT=false&deviceId=0&deviceLat=45.4640&deviceLon=9.1919&serverSideAds=false&marketingRegion=IT&masterJWTPassthrough=true&includeExtendedEvents=false&embedPartner=samsung-tvplus
 #EXTINF:-1 tvg-id="PlutoTvToto.it" tvg-logo="https://images.pluto.tv/channels/65253f9881f942000833ccd5/colorLogoPNG.png" group-title="TV Italiane" , Totò - Pluto
-https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/65253f9881f942000833ccd5/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=0&appVersion=0&clientModelNumber=1.0.0&country=IT&deviceDNT=false&deviceId=0&deviceLat=45.4640&deviceLon=9.1919&serverSideAds=false&marketingRegion=IT&masterJWTPassthrough=true&includeExtendedEvents=false&embedPartner=samsung-tvplus
+https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/65253f9881f942000833ccd5/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=0&appVersion=0&deviceDNT=true&deviceId=0&advertisingId=0&us_privacy=0&embedPartner=samsung-tvplus
 
 
 #EXTINF:-1 tvg-id="PlutoTvNatura.it" tvg-name="Natura" tvg-logo="https://images.pluto.tv/channels/60802b37709d6b0007b0c549/colorLogoPNG.png" group-title="TV Italiane", Natura - Pluto
@@ -337,8 +342,6 @@ https://amg00627-amg00627c29-rakuten-it-3989.playouts.now.amagi.tv/playlist/amg0
 https://d2fy8hzo91nhdj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-awv73sv30t1t1/pocit.m3u8
 #EXTINF:-1 tvg-name="LooLoo Kids" tvg-id="IT5000006B7" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/IT5000006B7_20250408T021458SQUARE.png" group-title="TV Italiane",LooLoo Kids
 https://amg02757-amg02757c7-samsung-it-7021.playouts.now.amagi.tv/playlist/amg02757-loolookids-llkitfast-samsungit/playlist.m3u8
-#EXTINF:-1 tvg-id="IT3800010K1" tvg-logo="https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/IT3800010K1_20251209T004749SQUARE.png" group-title="TV Italiane" ,Masha e Orso
-https://amg01954-amg01954c4-samsung-it-10210.playouts.now.amagi.tv/ts-eu-w1-n2/playlist/amg01954-animaccordltd-mashaeorso-samsungit/playlist.m3u8
 #EXTINF:-1 tvg-id="PlutoJunior.it" tvg-logo="https://images.pluto.tv/channels/686cfe983ffa5e0c91cdb5df/colorLogoPNG.png" group-title="TV Italiane",Junior
 https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/686cfe983ffa5e0c91cdb5df/master.m3u8?deviceType=philipstv&deviceMake=philipstv&deviceModel=philipstv&deviceVersion=0&appVersion=0&clientModelNumber=1.0.0&country=IT&deviceDNT=false&deviceId=0&deviceLat=45.4640&deviceLon=9.1919&serverSideAds=true&marketingRegion=IT&masterJWTPassthrough=true&includeExtendedEvents=false&embedPartner=philipstv
 #EXTINF:-1 tvg-id="PlutoSuperStar.it" tvg-logo="https://images.pluto.tv/channels/6093f6f8351eb0000754afb8/colorLogoPNG.png" group-title="TV Italiane",Super! Cartoni animati
@@ -398,14 +401,14 @@ https://5a1178b42cc03.streamlock.net/travel/travel/playlist.m3u8
 https://5f22d76e220e1.streamlock.net/iuniortv/iuniortv/playlist.m3u8
 #EXTINF:-1 tvg-name="MAN-GA" tvg-id="Manga.it" tvg-logo="https://cdn-0.tvprofil.com/img/kanali-logo/man_ga_logo.png" group-title="TV Italiane",MAN-GA
 https://c65b9e710bde44819015af98e72cd7ab.msvdn.net/live/S93572876/aILSQPYFY3pF/playlist.m3u8
-#EXTINF:-1 tvg-name="" tvg-id="" tvg-logo="https://upload.wikimedia.org/wikipedia/it/c/c6/Neko_tv.png" group-title="TV Italiane",NekoTV (test)
+#EXTINF:-1 tvg-name="KamiTV" tvg-id="" tvg-logo="https://nekotv.it/images/pic.png" group-title="TV Italiane",KamiTV
 http://nekotv.mywire.org:8080/hls/test.m3u8
 #EXTINF:-1 tvg-name="EURO TV" tvg-id="" tvg-logo="" group-title="TV Italiane",EURO TV
 https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8
 #EXTINF:-1 tvg-name="SuperSIX" tvg-id="" tvg-logo="" group-title="TV Italiane",SuperSIX
 https://5f22d76e220e1.streamlock.net/supersixnew/supersixnew/playlist.m3u8
 #EXTINF:-1 tvg-name="Vintage TV" tvg-id="" tvg-logo="https://www.adnplay.it/wp-content/uploads/2026/01/72dd9127-105d-475a-b561-99eb346ef301-1.png" group-title="TV Italiane",Vintage TV
-https://64b16f23efbee.streamlock.net/hit24tv/hit24tv/manifest.mpd
+https://64b16f23efbee.streamlock.net/hit24tv/hit24tv/playlist.m3u8
 #EXTINF:-1 tvg-name="Bom Channel" tvg-id="" tvg-logo="" group-title="TV Italiane",Bom Channel
 https://5f22d76e220e1.streamlock.net/canale6/canale6/playlist.m3u8
 #EXTINF:-1 tvg-logo="" group-title="TV Italiane",QVC Italia
@@ -603,12 +606,12 @@ https://58d921499d3d3.streamlock.net/RadioBelllaemonellaTV/livestream/playlist.m
 #EXTINF:-1 tvg-name="" tvg-id="" tvg-logo="" group-title="TV Italiane",CasaSanremo
 https://router.xdevel.com/video0s975911-633/stream/playlist_dvr.m3u8
 
-#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="501" channel-number="501" group-title="TV Italiane",Rai1 (dash)
-https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16&forceUserAgent=hbbtv
-#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Rai1 (hls)
+#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="501" channel-number="501" group-title="TV Italiane",Rai1 900p
 #KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
 https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=7&forceUserAgent=raiplayandroidtv
+#EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Rai1 HbbTV
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16&forceUserAgent=hbbtv
 #EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="" tvg-chno="502" channel-number="502" group-title="TV Italiane",Rai2 (dash)
 https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308718&output=7&forceUserAgent=hbbtv
 #EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane" user-agent="raiplayandroidtv",Rai2 (hls)
@@ -657,8 +660,6 @@ http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=24268&output=7
 https://8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/test2/dash/manifest.mpd
 #EXTINF:-1 tvg-name="Rai4K" channel-id="rai 4k" tvg-id="Rai4K.it" tvg-logo="" channel-number="" group-title="TV Italiane", Rai4K (hls)
 https://raievent10-elem-live.akamaized.net/hls/live/619189/raievent10/raievent10/playlist.m3u8
-#EXTINF:-1 tvg-id="Rai4K.it" tvg-name="Rai4K" group-title="TV Italiane",Rai4K HDR (dash)
-https://raievent10-dash-live.akamaized.net/dash/live/664000/raievent10/manifest.mpd
 #EXTINF:-1 tvg-name="LIVE 1" tvg-id="grandefratello" tvg-logo="https://img-prod-api2.mediasetplay.mediaset.it/api/images/cu/v3/aHR0cHM6Ly9zdGF0aWMyLm1lZGlhc2V0cGxheS5tZWRpYXNldC5pdC9tYW0vMjAyMy8wOS8wOC8xMzIxMjQ3MzgtNWNkNzY1NWQtOWNlZi00YzI3LTg5YTctMTYyYThkNmYxNzk2LnBuZw/editorial_image_channel_logo/80/80?r=2" tvg-chno="" group-title="TV Italiane",GF Regia 1
 https://live02-col.msf.cdn.mediaset.net/live/ch-b7/b7-clr.isml/index.m3u8
 #EXTINF:-1 tvg-name="LIVE 2" tvg-id="grandefratello" tvg-logo="https://img-prod-api2.mediasetplay.mediaset.it/api/images/cu/v3/aHR0cHM6Ly9zdGF0aWMyLm1lZGlhc2V0cGxheS5tZWRpYXNldC5pdC9tYW0vMjAyMy8wOS8wOC8xMzIwNDUwNTAtMDU3NDA4ZmUtODI5YS00ZDQ3LWJkYzktYWRhODBhNjg1ZGI5LnBuZw/editorial_image_channel_logo/80/80?r=2" tvg-chno="" group-title="TV Italiane",GF Regia 2
@@ -883,8 +884,6 @@ https://rst.saiuzwebnetwork.it:8081/retereggio/tracks-v1a1/mono.m3u8
 https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.tvdream.net/img/etv-rete7.png" group-title="TV Italiane",E'Tv Rete7
 https://live.ipstream.it/etv/etv.stream/chunklist_w869612369.m3u8
-#EXTINF:-1 tvg-id="euro tv" tvg-name="Euro Tv" tvg-logo="https://upload.wikimedia.org/wikipedia/it/9/93/Eurotv.png" group-title="TV Italiane",Euro Tv
-https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8
 #EXTINF:-1 tvg-id="extra tv" tvg-name="Extra Tv" tvg-logo="https://www.extratv.it/new/wp-content/uploads/2020/04/Schermata-2020-04-14-alle-20.04.12-2.png" group-title="TV Italiane",Extra Tv
 https://rst2.saiuzwebnetwork.it:8081/extratvlive/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="fm tv 75 marche" tvg-name="Fm Tv 75 Marche" tvg-logo="https://www.fmtv.live/wp-content/uploads/2019/08/logo_fmtv_white_mod.jpg" group-title="TV Italiane",Fm Tv 75 Marche
@@ -1144,7 +1143,7 @@ https://amg01821-amg01821c38-rakuten-it-10669.playouts.now.amagi.tv/ts-eu-w1-n2/
 #EXTINF:-1 tvg-chno=847 tvg-id="80-anni" tvg-name="80 Anni - 2a Guerra Mondiale" group-title="Rakuten TV",80 Anni - 2a Guerra Mondiale
 https://12c898047ca54008a2014edf2411f165.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-it_80Anni2aGuerraMondiale/playlist.m3u8
 #EXTINF:-1 tvg-chno=877 tvg-id="euronews-live-ita" tvg-name="Euronews IN DIRETTA" group-title="Rakuten TV",Euronews IN DIRETTA
-https://euronews-live-ita-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6570-restreaming/bitok/eyJzdGlkIjoiYWY5YzVhYzgtMWVlMy00MTMwLWI2NjYtYWU5NzViMGM1NjBkIiwibWt0IjoiaXQiLCJjaCI6NjU3MCwicHRmIjo1fQ%3D%3D/live/eds/euronews-it/25674/euronews-it.m3u8
+https://euronews-live-ita-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6570-restreaming/bitok/eyJzdGlkIjoiOTY2NWNhN2EtNDA2MC00NjIzLTlhZGYtOWNkMzI5OGY4NGRmIiwibWt0IjoiaXQiLCJjaCI6NjU3MCwicHRmIjo1fQ%3D%3D/live/eds/euronews-it/25674/euronews-it.m3u8
 #EXTINF:-1 tvg-chno=881 tvg-id="the-reuters-60" tvg-name="The Reuters 60" group-title="Rakuten TV",The Reuters 60
 https://amg00453-reuters-amg00453c1-rakuten-uk-2110.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-rakutenuk/playlist.m3u8
 #EXTINF:-1 tvg-chno=882 tvg-id="il-sole-24-ore-tv" tvg-name="Il Sole 24 Ore TV" group-title="Rakuten TV",Il Sole 24 Ore TV
@@ -1158,7 +1157,7 @@ https://e96a7526.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdX
 #EXTINF:-1 tvg-chno=888 tvg-id="bloomberg-tv-plus" tvg-name="Bloomberg TV+" group-title="Rakuten TV",Bloomberg TV+
 https://86ebec83.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0Jsb29tYmVyZ1RWUGx1c19ITFM/playlist.m3u8
 #EXTINF:-1 tvg-chno=892 tvg-id="africanews-eng" tvg-name="Africanews" group-title="Rakuten TV",Africanews
-https://africanews-eng-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576-restreaming/bitok/eyJzdGlkIjoiNzMxYmE3NGEtOTE0MS00ZmZkLWIzMTgtZWYwNTIwMWZhNmY1IiwibWt0IjoiaXQiLCJjaCI6NjU4NywicHRmIjo1fQ%3D%3D/live/eds/africanews-en/26036/africanews-en.m3u8
+https://africanews-eng-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576-restreaming/bitok/eyJzdGlkIjoiN2QxZDdmODgtYjlkMi00NDBiLTg5ZDktODNiNjkzNWIwMjY2IiwibWt0IjoiaXQiLCJjaCI6NjU4NywicHRmIjo1fQ%3D%3D/live/eds/africanews-en/26036/africanews-en.m3u8
 #EXTINF:-1 tvg-chno=893 tvg-id="cgtn" tvg-name="CGTN" group-title="Rakuten TV",CGTN
 https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
 #EXTINF:-1 tvg-chno=894 tvg-id="newsworld-ita" tvg-name="NewsWorld" group-title="Rakuten TV",NewsWorld
