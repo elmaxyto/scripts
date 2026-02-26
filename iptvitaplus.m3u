@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/elmaxyto/epg-update/refs/heads/main/epg.xml"
-#EXTM3U url-tvg="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz" billed-msg="☕Supportarmi:https://ko-fi.com/gtvit/tip" max-conn="8" x-tvg-url="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz"
+#EXTM3U url-tvg="http://epg-guide.com/wltv.gz,https://i.mjh.nz/SamsungTVPlus/it.xml.gz"
 
 #EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" tvg-chno="1" channel-number="1" group-title="TV Italiane",Rai1 4K
 #EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
@@ -28,7 +28,7 @@ https://d31mw7o1gs0dap.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 https://cloudflare-api.zappr.stream/api?https://viamotionhsi.netplus.ch/live/eds/rsila1hd/browser-HLS8/rsila1hd.m3u8
 #EXTINF:-1 tvg-name="RSI La2" tvg-id="rsila2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RSI_La_2_2012.svg/320px-RSI_La_2_2012.svg.png" tvg-chno="11" channel-number="11" group-title="TV Italiane",RSI La2
 https://cloudflare-api.zappr.stream/api?https://viamotionhsi.netplus.ch/live/eds/rsila2hd/browser-HLS8/rsila2hd.m3u8
-#EXTINF:-1 tvg-id="Rai1.it" tvg-name="Rai1" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" group-title="TV Italiane" tvg-chno="12" channel-number="12",Rai1 4K dash
+#EXTINF:-1 tvg-id="Rai1.it" tvg-name="Rai1" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" group-title="TV Italiane" tvg-chno="12" channel-number="12" relinker="4465258",Rai1 4K dash
 https://raievent10-dash-live.akamaized.net/dash/live/664000/raievent10/manifest.mpd
 #EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="https://www.raiplay.it/dl/img/2016/09/1473661951374Logo-Rai1.png" tvg-chno="13" channel-number="13" group-title="TV Italiane",Rai1 1080p
 #KODIPROP:inputstream.adaptive.manifest_type=hls
@@ -609,10 +609,10 @@ https://router.xdevel.com/video0s975911-633/stream/playlist_dvr.m3u8
 #EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="501" channel-number="501" group-title="TV Italiane",Rai1 900p
 #KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
-https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=7&forceUserAgent=raiplayandroidtv
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=7&forceUserAgent=tizen
 #EXTINF:-1 tvg-name="Rai1" tvg-id="Rai1.it" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Rai1 HbbTV
 https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16&forceUserAgent=hbbtv
-#EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="" tvg-chno="502" channel-number="502" group-title="TV Italiane",Rai2 (dash)
+#EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="" tvg-chno="502" channel-number="502" group-title="TV Italiane",Rai2 HbbTV
 https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308718&output=7&forceUserAgent=hbbtv
 #EXTINF:-1 tvg-name="Rai2" tvg-id="Rai2.it" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane" user-agent="raiplayandroidtv",Rai2 (hls)
 #KODIPROP:inputstream.adaptive.manifest_type=hls
@@ -647,6 +647,10 @@ https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=4761838&output=16&fo
 #EXTINF:-1 tvg-name="Rai generico" tvg-id="" tvg-logo="" group-title="TV Italiane",Rai generic3 SD
 #EXTVLCOPT:http-user-agent=rainet/4.0.8 (Linux;Android 14) ExoPlayerLib/2.18.0 #https://raigeneric3-dash-live.akamaized.net/dash/live/663989/raigeneric3/manifest.mpd
 https://8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/raigeneric3/hls/playlist_mo.m3u8
+#EXTINF:-1 tvg-name="Rai Sport" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Rai Sport 900p
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#EXTVLCOPT:http-user-agent=AppleCoreMedia/1.0.0.22K557
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=358025&output=7&forceUserAgent=tizen
 #EXTINF:-1 tvg-name="RaiPlaySport 1" tvg-id="" tvg-logo="https://www.raiplay.it/dl/img/2024/04/30/1714492163377_Canale3x.png" group-title="TV Italiane",RaiPlaySport 1
 https://8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/raiplay4/hls/raiplay4_2400/chunklist.m3u8
 #EXTINF:-1 tvg-name="RaiPlaySport 2" tvg-id="" tvg-logo="https://www.raiplay.it/dl/img/2024/04/30/1714492217998_Canale%20non-optimized3x.png" group-title="TV Italiane",RaiPlaySport 2
@@ -658,8 +662,6 @@ https://8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/raiplay6/hls/raiplay6_2400/ch
 http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=24268&output=7
 #EXTINF:-1 tvg-name="Rai test2" tvg-id="" tvg-logo="" group-title="TV Italiane", Rai test2
 https://8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/test2/dash/manifest.mpd
-#EXTINF:-1 tvg-name="Rai4K" channel-id="rai 4k" tvg-id="Rai4K.it" tvg-logo="" channel-number="" group-title="TV Italiane", Rai4K (hls)
-https://raievent10-elem-live.akamaized.net/hls/live/619189/raievent10/raievent10/playlist.m3u8
 #EXTINF:-1 tvg-name="LIVE 1" tvg-id="grandefratello" tvg-logo="https://img-prod-api2.mediasetplay.mediaset.it/api/images/cu/v3/aHR0cHM6Ly9zdGF0aWMyLm1lZGlhc2V0cGxheS5tZWRpYXNldC5pdC9tYW0vMjAyMy8wOS8wOC8xMzIxMjQ3MzgtNWNkNzY1NWQtOWNlZi00YzI3LTg5YTctMTYyYThkNmYxNzk2LnBuZw/editorial_image_channel_logo/80/80?r=2" tvg-chno="" group-title="TV Italiane",GF Regia 1
 https://live02-col.msf.cdn.mediaset.net/live/ch-b7/b7-clr.isml/index.m3u8
 #EXTINF:-1 tvg-name="LIVE 2" tvg-id="grandefratello" tvg-logo="https://img-prod-api2.mediasetplay.mediaset.it/api/images/cu/v3/aHR0cHM6Ly9zdGF0aWMyLm1lZGlhc2V0cGxheS5tZWRpYXNldC5pdC9tYW0vMjAyMy8wOS8wOC8xMzIwNDUwNTAtMDU3NDA4ZmUtODI5YS00ZDQ3LWJkYzktYWRhODBhNjg1ZGI5LnBuZw/editorial_image_channel_logo/80/80?r=2" tvg-chno="" group-title="TV Italiane",GF Regia 2
@@ -718,28 +720,44 @@ https://stream.rcs.revma.com/2vke97f39yuvv
 https://stream.rcs.revma.com/f29yes56dwuvv
 
 
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane", Restart Rete 4
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane", Restart Rete 4
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/Rete4-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Italia 2
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Italia 2
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/Italia2-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart La5
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart La5
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/La5-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Cine34
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Cine34
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/Cine34-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Iris
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Iris
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/Iris-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Focus
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Focus
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/Focus-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart TOPCrime
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart TOPCrime
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/TopCrime-Restart.php
-#EXTINF:-1 type="movie" tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Mediaset Extra
+#EXTINF:-1 tvg-id="" tvg-logo="" tvg-chno="" channel-number="" group-title="TV Italiane",Restart Mediaset Extra
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 https://www.mytivu.it/Application/Restart/MediasetExtra-Restart.php
 
@@ -1075,7 +1093,7 @@ https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae0
 #EXTINF:-1 tvg-chno=409 tvg-id="travelxp-eng" tvg-name="Travelxp" group-title="Rakuten TV",Travelxp
 https://27c980761ff9437d929e64647afe183a.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-eu_TravelXP/playlist.m3u8
 #EXTINF:-1 tvg-chno=410 tvg-id="med-tv" tvg-name="Med.TV" group-title="Rakuten TV",Med.TV
-https://med-tv-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-medtv-1-restreaming/bitok/eyJzdGlkIjoiMGNiZmIyYzItYjdmYS00NjA0LTljZjctNGNiN2M0Y2IxNThjIiwibWt0IjoiaXQiLCJjaCI6IjUiLCJwdGYiOiJ1bmtub3duIn0%3D/hls/main.m3u8
+https://med-tv-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-medtv-1-restreaming/bitok/eyJzdGlkIjoiMmIzZTAwOGYtMWRkMS00ZjdlLWE0ZjMtOTg1NDk5ZWZhM2IzIiwibWt0IjoiaXQiLCJjaCI6IjUiLCJwdGYiOiJ1bmtub3duIn0%3D/hls/main.m3u8
 #EXTINF:-1 tvg-chno=424 tvg-id="stingray-naturescape" tvg-name="Stingray Naturescape" group-title="Rakuten TV",Stingray Naturescape
 https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8
 #EXTINF:-1 tvg-chno=436 tvg-id="class-tv-moda" tvg-name="Moda TV" group-title="Rakuten TV",Moda TV
@@ -1143,7 +1161,7 @@ https://amg01821-amg01821c38-rakuten-it-10669.playouts.now.amagi.tv/ts-eu-w1-n2/
 #EXTINF:-1 tvg-chno=847 tvg-id="80-anni" tvg-name="80 Anni - 2a Guerra Mondiale" group-title="Rakuten TV",80 Anni - 2a Guerra Mondiale
 https://12c898047ca54008a2014edf2411f165.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-it_80Anni2aGuerraMondiale/playlist.m3u8
 #EXTINF:-1 tvg-chno=877 tvg-id="euronews-live-ita" tvg-name="Euronews IN DIRETTA" group-title="Rakuten TV",Euronews IN DIRETTA
-https://euronews-live-ita-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6570-restreaming/bitok/eyJzdGlkIjoiNTVhN2E5NTAtMmJlZC00YzEyLTk3ZjYtZGUzOGM5ZWU5MGFkIiwibWt0IjoiaXQiLCJjaCI6NjU3MCwicHRmIjo1fQ%3D%3D/live/eds/euronews-it/25674/euronews-it.m3u8
+https://euronews-live-ita-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6570-restreaming/bitok/eyJzdGlkIjoiNzhlNDMxMzUtYTI0OC00NjZkLTk2NjAtYTI0ZGU3OTJjMmI3IiwibWt0IjoiaXQiLCJjaCI6NjU3MCwicHRmIjo1fQ%3D%3D/live/eds/euronews-it/25674/euronews-it.m3u8
 #EXTINF:-1 tvg-chno=881 tvg-id="the-reuters-60" tvg-name="The Reuters 60" group-title="Rakuten TV",The Reuters 60
 https://amg00453-reuters-amg00453c1-rakuten-uk-2110.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-rakutenuk/playlist.m3u8
 #EXTINF:-1 tvg-chno=882 tvg-id="il-sole-24-ore-tv" tvg-name="Il Sole 24 Ore TV" group-title="Rakuten TV",Il Sole 24 Ore TV
@@ -1157,7 +1175,7 @@ https://e96a7526.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdX
 #EXTINF:-1 tvg-chno=888 tvg-id="bloomberg-tv-plus" tvg-name="Bloomberg TV+" group-title="Rakuten TV",Bloomberg TV+
 https://86ebec83.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0Jsb29tYmVyZ1RWUGx1c19ITFM/playlist.m3u8
 #EXTINF:-1 tvg-chno=892 tvg-id="africanews-eng" tvg-name="Africanews" group-title="Rakuten TV",Africanews
-https://africanews-eng-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576-restreaming/bitok/eyJzdGlkIjoiZTM3NDZhMTEtMjNmZC00ZmJjLWJmYjYtODQxOTFlZDE3Mzk3IiwibWt0IjoiaXQiLCJjaCI6NjU4NywicHRmIjo1fQ%3D%3D/live/eds/africanews-en/26036/africanews-en.m3u8
+https://africanews-eng-it.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576-restreaming/bitok/eyJzdGlkIjoiZDM5ZTZlYjYtM2Q2Ny00YTVhLWFkMjctOGZkM2YxMTAxZjc0IiwibWt0IjoiaXQiLCJjaCI6NjU4NywicHRmIjo1fQ%3D%3D/live/eds/africanews-en/26036/africanews-en.m3u8
 #EXTINF:-1 tvg-chno=893 tvg-id="cgtn" tvg-name="CGTN" group-title="Rakuten TV",CGTN
 https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
 #EXTINF:-1 tvg-chno=894 tvg-id="newsworld-ita" tvg-name="NewsWorld" group-title="Rakuten TV",NewsWorld
